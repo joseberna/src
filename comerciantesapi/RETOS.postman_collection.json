@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "49b7f545-15fa-4345-9f11-c5700fd67aa1",
+		"name": "RETOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "66464",
+		"_collection_link": "https://developer20.postman.co/workspace/Team-Workspace~b51375dd-278a-4bf5-8bd1-32a0ed620a18/collection/66464-49b7f545-15fa-4345-9f11-c5700fd67aa1?action=share&source=collection_link&creator=66464"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"correoElectronico\": \"admin@demo.com\",\n  \"contrasena\": \"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "municipios",
+			"item": [
+				{
+					"name": "getAllMunicipios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/municipios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"municipios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comerciantes",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkZW1vLmNvbSIsImlhdCI6MTc1MzU1ODQ1OSwiZXhwIjoxNzUzNjQ0ODU5fQ.zRpx9TnXkmcQ4mq3yJ3akruge8f_M01SozMJGpNo1DM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombreRazonSocial\": \"Comercializadora el Éxito\",\n  \"municipio\": \"Cali\",\n  \"telefono\": \"3165552233\",\n  \"correoElectronico\": \"contacto@exitocomercial.com\",\n  \"fechaRegistro\": \"2025-07-26\",\n  \"estado\": \"ACTIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/comerciantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"comerciantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkZW1vLmNvbSIsImlhdCI6MTc1MzU1ODQ1OSwiZXhwIjoxNzUzNjQ0ODU5fQ.zRpx9TnXkmcQ4mq3yJ3akruge8f_M01SozMJGpNo1DM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombreRazonSocial\": \"Comercializadora el Éxito Modificada\",\n  \"municipio\": \"Cali\",\n  \"telefono\": \"3165552233\",\n  \"correoElectronico\": \"contacto@exitocomercial.com\",\n  \"estado\": \"Activo\"  \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/comerciantes/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"comerciantes",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkZW1vLmNvbSIsImlhdCI6MTc1MzU1ODQ1OSwiZXhwIjoxNzUzNjQ0ODU5fQ.zRpx9TnXkmcQ4mq3yJ3akruge8f_M01SozMJGpNo1DM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/comerciantes/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"comerciantes",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkZW1vLmNvbSIsImlhdCI6MTc1MzU1ODQ1OSwiZXhwIjoxNzUzNjQ0ODU5fQ.zRpx9TnXkmcQ4mq3yJ3akruge8f_M01SozMJGpNo1DM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/comerciantes/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"comerciantes",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPaginado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkZW1vLmNvbSIsImlhdCI6MTc1MzU1ODQ1OSwiZXhwIjoxNzUzNjQ0ODU5fQ.zRpx9TnXkmcQ4mq3yJ3akruge8f_M01SozMJGpNo1DM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/comerciantes?filtro=&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"comerciantes"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReporteCVS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkZW1vLmNvbSIsImlhdCI6MTc1MzU2NDU2MSwiZXhwIjoxNzUzNjUwOTYxfQ.Pv8pcn7hsEWe8gZZFKv6SNfXzsqMF-MtjY2ZArMUSkE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/comerciantes/reporte",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"comerciantes",
+								"reporte"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
