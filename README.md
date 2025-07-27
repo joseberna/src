@@ -48,7 +48,7 @@ Incluye autenticación JWT, autorización por roles, paginación, exportación d
 | 11  | Página Formulario: creación/edición de comerciante, validadores, selector municipio, sumatoria de ingresos/empleados (footer, sólo editar) | ⏳     |
 |     | Pruebas unitarias con Jest para componentes principales            | ⏳     |
 
-> ⏳ Los retos 10 y 11 del frontend no pudieron completarse completamente por falta de tiempo, pero la estructura está implementada y documentada para continuar.
+> ⏳ Los retos 10 y 11 del frontend no pudieron completarse completamente por falta de tiempo, pero la estructura está implementada y documentada para continuar. 
 
 ---
 

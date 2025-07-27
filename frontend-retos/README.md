@@ -1,46 +1,133 @@
-# Getting Started with Create React App
+# 🚀 Frontend Comerciantes - Retos Fullstack ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **Autor:** Jose Fernando Berna  
+> **Stack:** React 18 • TypeScript • Vite • CSS Modules • Formik • Yup
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📝 Descripción General
 
-### `npm start`
+Frontend desarrollado en React para consumir la API de gestión de comerciantes.  
+Implementa login, autenticación JWT, roles, CRUD de comerciantes y manejo básico de establecimientos, todo con las mejores prácticas de arquitectura y componentes reutilizables.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🏆 Retos Implementados
 
-### `npm test`
+| #  | Descripción                                           | Estado |
+|----|-------------------------------------------------------|--------|
+| 1  | Estructura inicial de proyecto con Vite y TypeScript  | ✅     |
+| 2  | Login visual y validación con Formik + Yup            | ✅     |
+| 3  | Consumo de API para login y almacenamiento de token   | ✅     |
+| 4  | Navegación protegida y uso de React Router            | ✅     |
+| 5  | HeaderUser mostrando nombre y rol del usuario         | ✅     |
+| 6  | Tabla paginada de comerciantes                        | ✅     |
+| 7  | Botón para exportar reporte CSV desde frontend        | ✅     |
+| 8  | Manejo de paginación, filtros y controles UX          | ✅     |
+| 9  | Formulario de creación y edición de comerciantes      | ⏳ (incompleto) |
+| 10 | Gestión visual de establecimientos                    | ⏳ (incompleto) |
+| 11 | Testing automatizado (Jest + Testing Library)         | ⏳ (incompleto) |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Nota:**  
+Los retos 9, 10 y 11 no se pudieron completar por temas de tiempo, pero se avanzó en la arquitectura y componentes base para facilitar su implementación.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Estructura del Proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```shell
+src/
+├── components/
+│   ├── LoginForm/
+│   ├── Shared/
+│   │    └── HeaderUser.tsx
+│   ├── Comerciantes/
+│   │    ├── ComerciantesTable.tsx
+│   │    ├── ComercianteForm.tsx
+│   │    └── ComercianteRow.tsx
+├── pages/
+│   └── HomePage.tsx
+├── styles/
+│   └── global.css
+└── App.tsx
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🔒 Seguridad y Manejo de Sesión
 
-### `npm run eject`
+El login consume el endpoint /api/auth/login del backend y guarda el JWT y usuario en localStorage.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+El Header muestra el nombre y rol (Administrador/Auxiliar) extraídos del usuario autenticado.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Todas las llamadas protegidas agregan el token JWT en el header.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+📊 Pantallas y Componentes Clave
+LoginForm: Valida email, password y términos. Si login es exitoso, redirige a /home.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+HeaderUser: Muestra nombre y rol, con diseño responsive y opción de logout.
 
-## Learn More
+HomePage: Tabla de comerciantes con paginación, botón para crear, exportar CSV (si el rol es Administrador).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ComerciantesTable: Lista los comerciantes. (Acciones de editar/cambiar estado están en estructura, pero faltan handlers funcionales).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ComercianteForm: (estructura creada para alta/modificación, falta integración total).
+
+🚦 Cómo ejecutar el frontend
+Clona el repo o copia los archivos.
+
+Instala dependencias:
+
+```shell
+npm install
+```
+Configura la URL del backend (VITE_API_URL o directamente en los fetch de la app, por defecto http://localhost:9090).
+
+Ejecuta el servidor:
+
+```shell
+npm run dev
+```
+
+Accede desde http://localhost:3000 (o el puerto que asigne Vite).
+
+🧪 Pruebas Unitarias
+
+Nota:
+
+Se dejó la estructura base y algunos ejemplos de test con React Testing Library, pero la cobertura no está completa por temas de tiempo.
+
+Para correr los tests (si agregas más):
+
+```shell
+npm test
+```
+
+⚙️ Buenas prácticas aplicadas
+Componentes funcionales y tipados (TypeScript).
+
+Estilos por componente (CSS modules).
+
+Uso de hooks (useState, useEffect).
+
+Validación de formularios con Formik + Yup.
+
+Código comentado y limpio.
+
+Arquitectura modular y escalable.
+
+JWT y roles manejados en el cliente.
+
+📦 Backend complementario
+Este frontend fue diseñado para trabajar con la API de backend Spring Boot desarrollada en paralelo (ver carpeta /backend).
+
+💡 Pendiente / Próximos pasos
+Completar formularios de alta/modificación de comerciantes.
+
+Gestión y visualización de establecimientos.
+
+Mejorar feedback visual de errores y cargas.
+
+Agregar más pruebas unitarias y de integración.
+
+👨‍💻 Autor
+Jose Fernando Berna
+📧 josefbernam@gmail.com
